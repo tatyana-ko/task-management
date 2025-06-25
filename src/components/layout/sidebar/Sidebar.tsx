@@ -1,3 +1,13 @@
+import { Account } from "./Account";
+import { MainMenu } from "./MainMenu";
+import { Projects } from "./Projects";
+
 export function Sidebar() {
-  return <div>Sidebar</div>
+  return (
+    <aside className="p-4 bg-white h-screen">
+      <Account />
+      <MainMenu />
+      <Projects />
+    </aside>
+  );
 }
