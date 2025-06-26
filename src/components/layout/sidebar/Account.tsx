@@ -9,7 +9,7 @@ export function Account() {
         <Image alt="profile avatar" src="" width={36} className="h-[36px] rounded-full bg-[#8352f6]" />
         <div className="text-left">
           <p className="font-bold text-neutral-950">Awe Std</p>
-          <p className="text-sm text-[#83868d]">awestd@gmail.com</p>
+          <p className="text-xs text-[#83868d]">awestd@gmail.com</p>
         </div>
         <ChevronDown size={18} className="ml-4 text-neutral-500"/>
       </button>
