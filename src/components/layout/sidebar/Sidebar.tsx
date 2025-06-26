@@ -4,7 +4,7 @@ import { Projects } from "./Projects";
 
 export function Sidebar() {
   return (
-    <aside className="p-4 bg-white h-screen">
+    <aside className="p-4 bg-white h-full">
       <Account />
       <MainMenu />
       <Projects />

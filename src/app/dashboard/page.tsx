@@ -11,32 +11,43 @@ export const metadata: Metadata = {
 export default function DashboardPage() {
   return (
     <div>
-      <div>
+      <div className="flex items-center justify-between mb-6">
         <h1 className="text-3xl">Dashboard</h1>
         <SearchField />
       </div>
 
-      <div className="">
-        <ul>
-          <StatsCard
-            label="Active Projects"
-            numberStats={92}
-            icon="/images/active-projects.svg"
-            isHourStat={false}
-          />
-          <StatsCard
-            label="On Going Projects"
-            numberStats={35}
-            icon="/images/ongoing-projects.svg"
-            isHourStat={false}
-          />
-          <StatsCard
-            label="Working hours"
-            numberStats={1149}
-            icon="/images/working-hours.svg"
-            isHourStat={true}
-          />
+      <div className="grid grid-cols-[30%_70%]">
+        <ul className="space-y-3">
+          <li>
+            <StatsCard
+              label="Active Projects"
+              numberStats={92}
+              icon="/images/active-projects.svg"
+              isHourStat={false}
+              bgColor="bg-purple-300"
+            />
+          </li>
+          <li>
+            <StatsCard
+              label="On Going Projects"
+              numberStats={35}
+              icon="/images/ongoing-projects.svg"
+              isHourStat={false}
+              bgColor="bg-yellow-300"
+            />
+          </li>
+          <li>
+            <StatsCard
+              label="Working hours"
+              numberStats={1149}
+              icon="/images/working-hours.svg"
+              isHourStat={true}
+              bgColor="bg-pink-200"
+            />
+          </li>
         </ul>
+
+        <div>DIAGRAM</div>
       </div>
     </div>
   );
