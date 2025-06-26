@@ -16,7 +16,7 @@ export default function DashboardPage() {
         <SearchField />
       </div>
 
-      <div className="grid grid-cols-[30%_70%]">
+      <div className="grid grid-cols-[25%_75%]">
         <ul className="space-y-3">
           <li>
             <StatsCard
