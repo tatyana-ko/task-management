@@ -5,7 +5,7 @@ export default function DashboardLayout({ children }: PropsWithChildren) {
   return (
     <div className="grid grid-cols-[300px_1fr]">
       <Sidebar />
-      <main>{children}</main>
+      <main className="p-4">{children}</main>
     </div>
   );
 }
