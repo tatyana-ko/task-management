@@ -3,7 +3,7 @@ import type { PropsWithChildren } from "react";
 
 export default function DashboardLayout({ children }: PropsWithChildren) {
   return (
-    <div className="grid grid-cols-[300px_1fr]">
+    <div className="grid grid-cols-[250px_1fr]">
       <Sidebar />
       <main className="p-4">{children}</main>
     </div>
