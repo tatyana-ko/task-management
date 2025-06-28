@@ -24,7 +24,7 @@ export function StatisticalDiagram({ data }: Props) {
   }, [data]);
 
   return (
-    <ResponsiveContainer width={650} height="85%">
+    <ResponsiveContainer width="95%" height="85%">
       <AreaChart
         width={730}
         height={250}

@@ -21,7 +21,7 @@ export function StatsCard({ label, numberStats, icon, isHourStat, bgColor }: ISt
         </span>
         <p className="text-sm">{label}</p>
       </div>
-      <Image src={icon} alt="stats decor icon" width={70} height={70} />
+      <Image src={icon} alt="stats decor icon" width={70} height={70} className="aspect-square"/>
     </article>
   );
 }
