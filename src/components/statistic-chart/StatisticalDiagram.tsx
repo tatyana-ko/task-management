@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   Area,
@@ -9,10 +9,10 @@ import {
   Tooltip,
   XAxis,
   YAxis,
-} from "recharts";
-import type { IMonthlyStatistic, IYearlyStatistic } from "./diagrama.types";
-import { DiagramTooltip } from "./DiagramTooltip";
-import { useMemo } from "react";
+} from 'recharts';
+import type { IMonthlyStatistic, IYearlyStatistic } from './diagrama.types';
+import { DiagramTooltip } from './DiagramTooltip';
+import { useMemo } from 'react';
 
 interface Props {
   data: Array<IYearlyStatistic | IMonthlyStatistic>;
@@ -46,8 +46,8 @@ export function StatisticalDiagram({ data }: Props) {
         <ReferenceLine
           stroke="#2d2347"
           segment={[
-            { x: "Apr", y: 0 },
-            { x: "Apr", y: maxValue },
+            { x: 'Apr', y: 0 },
+            { x: 'Apr', y: maxValue },
           ]}
         />
 

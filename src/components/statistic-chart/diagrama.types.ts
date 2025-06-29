@@ -9,6 +9,6 @@ export interface IMonthlyStatistic {
 }
 
 export interface ITimeRange {
-  label: "Yearly" | "Monthly";
-  value: "yearly" | "monthly";
+  label: 'Yearly' | 'Monthly';
+  value: 'yearly' | 'monthly';
 }

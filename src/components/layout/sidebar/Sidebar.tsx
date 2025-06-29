@@ -1,6 +1,6 @@
-import { Account } from "./Account";
-import { MainMenu } from "./MainMenu";
-import { Projects } from "./Projects";
+import { Account } from './Account';
+import { MainMenu } from './MainMenu';
+import { Projects } from './Projects';
 
 export function Sidebar() {
   return (

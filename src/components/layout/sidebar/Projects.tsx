@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { PROJECTS_DATA } from "./sidebar.data";
-import { clsx } from "clsx";
+import Link from 'next/link';
+import { PROJECTS_DATA } from './sidebar.data';
+import { clsx } from 'clsx';
 
 export function Projects() {
   return (
@@ -10,7 +10,7 @@ export function Projects() {
         {PROJECTS_DATA.map((item) => (
           <li key={item.label}>
             <Link href={item.link} className="flex items-center gap-3">
-              <div className={clsx(item.color, 'h-3 w-3 block')}/>
+              <div className={clsx(item.color, 'h-3 w-3 block')} />
               <p className="text-[#83868d]">{item.label}</p>
             </Link>
           </li>
@@ -19,4 +19,3 @@ export function Projects() {
     </div>
   );
 }
-

@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { MAIN_MENU_DATA } from "./sidebar.data";
+import Link from 'next/link';
+import { MAIN_MENU_DATA } from './sidebar.data';
 
 export function MainMenu() {
   return (
@@ -9,9 +9,11 @@ export function MainMenu() {
         {MAIN_MENU_DATA.map((item) => (
           <li key={item.label}>
             <Link href={item.link} className="flex items-center gap-3">
-              <item.icon color="#a3a5a8" size={18}/>
+              <item.icon color="#a3a5a8" size={18} />
               <p className="text-[#a3a5a8]">{item.label}</p>
-              {item.label === "Messages" && <span className="px-2 text-sm ml-auto bg-indigo-300 rounded-2xl">4</span>}
+              {item.label === 'Messages' && (
+                <span className="px-2 text-sm ml-auto bg-indigo-300 rounded-2xl">4</span>
+              )}
             </Link>
           </li>
         ))}

@@ -1,15 +1,15 @@
-import type { ChangeEvent, Dispatch, SetStateAction } from "react";
-import { TIME_RANGE } from "./diagram.data";
+import type { ChangeEvent, Dispatch, SetStateAction } from 'react';
+import { TIME_RANGE } from './diagram.data';
 
 interface Props {
-  setTimeRangeValue: Dispatch<SetStateAction<"yearly" | "monthly">>;
+  setTimeRangeValue: Dispatch<SetStateAction<'yearly' | 'monthly'>>;
 }
 
 export function HeadingForStatistics({ setTimeRangeValue }: Props) {
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const value = e.target.value;
 
-    if (value === "yearly" || value === "monthly") {
+    if (value === 'yearly' || value === 'monthly') {
       setTimeRangeValue(value);
     }
   };
