@@ -4,7 +4,7 @@ import { SearchField } from '@/components/ui/search-field/SearchField';
 
 export function Dashboard() {
   return (
-    <div>
+    <div className='p-4'>
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-3xl">Dashboard</h1>
         <SearchField />
