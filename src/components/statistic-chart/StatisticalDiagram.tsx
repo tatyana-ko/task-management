@@ -4,15 +4,18 @@ import {
   Area,
   AreaChart,
   CartesianGrid,
+  Dot,
+  ReferenceDot,
   ReferenceLine,
   ResponsiveContainer,
   Tooltip,
   XAxis,
   YAxis,
 } from 'recharts';
-import type { IMonthlyStatistic, IYearlyStatistic } from './diagrama.types';
+import type { IMonthlyStatistic, IYearlyStatistic } from './diagram.types';
 import { DiagramTooltip } from './DiagramTooltip';
 import { useMemo } from 'react';
+import { DiagramLabel } from './DiagramLabel';
 
 interface Props {
   data: Array<IYearlyStatistic | IMonthlyStatistic>;
@@ -57,6 +60,16 @@ export function StatisticalDiagram({ data }: Props) {
           stroke="#987ed8"
           fillOpacity={1}
           fill="url(#statisticColor)"
+        />
+
+        <ReferenceDot
+          x="Apr"
+          y={maxValue}
+          r={4}
+          stroke="#fff"
+          strokeWidth={1}
+          fill="#987ed8"
+          label={(props) => <DiagramLabel {...props} />}
         />
       </AreaChart>
     </ResponsiveContainer>

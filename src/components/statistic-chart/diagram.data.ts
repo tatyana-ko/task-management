@@ -1,4 +1,4 @@
-import type { IMonthlyStatistic, ITimeRange, IYearlyStatistic } from './diagrama.types';
+import type { IMonthlyStatistic, ITimeRange, IYearlyStatistic } from './diagram.types';
 
 export const YEARLY_STATISTICS: IYearlyStatistic[] = [
   { period: 'Jan', value: 29 },
