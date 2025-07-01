@@ -1,16 +1,17 @@
+import { LastTasksSection } from '@/components/last-tasks/LastTasksSection';
 import { StatisticChart } from '@/components/statistic-chart/StatisticChart';
 import { StatsCard } from '@/components/ui/card/StatsCard';
 import { SearchField } from '@/components/ui/search-field/SearchField';
 
 export function Dashboard() {
   return (
-    <div className='p-4'>
+    <div className="p-4">
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-3xl">Dashboard</h1>
         <SearchField />
       </div>
 
-      <div className="grid grid-cols-[25%_75%] gap-2">
+      <section className="grid grid-cols-[25%_75%] gap-2">
         <ul className="space-y-3">
           <li>
             <StatsCard
@@ -42,7 +43,9 @@ export function Dashboard() {
         </ul>
 
         <StatisticChart />
-      </div>
+      </section>
+
+      <LastTasksSection />
     </div>
   );
 }
