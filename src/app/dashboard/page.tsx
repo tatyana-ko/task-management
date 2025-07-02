@@ -11,7 +11,7 @@ export default function DashboardPage() {
   return (
     <div className="grid grid-cols-[75%_25%]">
       <Dashboard />
-      <div className="bg-violet-200 text-center h-[100vh]">CHAT</div>
+      <div className="bg-chat-bg-color text-center text-white h-[100vh]">CHAT</div>
     </div>
   );
 }

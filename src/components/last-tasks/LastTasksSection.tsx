@@ -11,14 +11,14 @@ export function LastTasksSection() {
 
   return (
     <section className="my-4">
-      <div className="flex items-center justify-between">
-        <h2 className="mb-4 text-2xl font-medium">
+      <div className="mb-4 flex items-center justify-between">
+        <h2 className="text-2xl font-medium">
           Last Tasks <span className="opacity-50">(3)</span>
         </h2>
         <Filter<'all' | TTaskStatus>
           data={TASKS_FILTER}
           stateChangeFunction={setTaskFilterValue}
-          filterName='last-task-filter'
+          filterName="last-task-filter"
         />
       </div>
       <ListOfLastTasks />

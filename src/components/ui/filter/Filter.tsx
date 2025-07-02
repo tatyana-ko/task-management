@@ -17,7 +17,7 @@ export function Filter<T extends string>({ filterName, data, stateChangeFunction
     <select
       name={filterName}
       onChange={handleChange}
-      className="px-3 py-1 border border-neutral-400 rounded-full shadow"
+      className="px-3 py-1 border border-light-text-color rounded-full shadow"
     >
       {data.map((item) => (
         <option key={item.label} value={item.value}>
