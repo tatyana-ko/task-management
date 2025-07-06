@@ -1,0 +1,23 @@
+.wrapper {
+  position: relative;
+  width: 120px;
+}
+
+.select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+}
+
+.icon {
+  color: var(--light-text-color);
+  position: absolute;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.icon:hover {
+  color: red;
+}
