@@ -1,8 +1,10 @@
-import { Images, Link, MessageSquareText, Pencil, Plane, Plus } from 'lucide-react';
+import { Images, Link as LucideLink, MessageSquareText, Pencil, Plane, Plus } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { formatDistance, subDays } from 'date-fns';
 import type { ITask } from '@/types/task.types';
 import { ProgressBar } from './ProgressBar';
+import { PAGES } from '@/config/pages.config';
 
 export function TaskCard({ task }: { task: ITask }) {
   const completedSubtasks = task.subtasks.filter((t) => t.isCompleted).length;
@@ -55,7 +57,7 @@ export function TaskCard({ task }: { task: ITask }) {
             <span>{task.resources.length}</span>
           </div>
           <div className="flex items-center gap-1">
-            <Link size={12} style={{ color: 'var(--light-text-color)' }} />
+            <LucideLink size={12} style={{ color: 'var(--light-text-color)' }} />
             <span>{task.links.length}</span>
           </div>
         </div>
@@ -64,12 +66,13 @@ export function TaskCard({ task }: { task: ITask }) {
           <button title="add task" className="p-2 rounded-full bg-primary">
             <Plus size={14} color="white" />
           </button>
-          <button
+          <Link
+            href={PAGES.TASK_EDIT(task.id)}
             title="update task"
             className="p-2 rounded-full bg-light-bg border border-primary"
           >
             <Pencil size={14} style={{ color: 'var(--primary)' }} />
-          </button>
+          </Link>
         </div>
       </div>
     </li>
