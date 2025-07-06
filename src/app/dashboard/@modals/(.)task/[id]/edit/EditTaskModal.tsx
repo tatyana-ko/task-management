@@ -1,13 +1,14 @@
 'use client';
 
 import { X } from 'lucide-react';
-import { useParams, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
-interface Props {}
+interface Props {
+  id: string;
+}
 
-export function EditTaskModal({}: Props) {
+export function EditTaskModal({ id }: Props) {
   const router = useRouter();
-  const { id } = useParams();
 
   const handleClose = () => {
     router.back();
