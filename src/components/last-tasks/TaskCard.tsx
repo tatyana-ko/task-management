@@ -67,7 +67,7 @@ export function TaskCard({ task }: { task: ITask }) {
             <Plus size={14} color="white" />
           </button>
           <Link
-            href={PAGES.TASK_EDIT(task.id)}
+            href={PAGES.EDIT_TASK(task.id)}
             title="update task"
             className="p-2 rounded-full bg-light-bg border border-primary"
           >
