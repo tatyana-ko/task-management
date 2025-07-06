@@ -10,7 +10,7 @@ export function StatisticChart() {
 
   return (
     <div className="px-2 py-2 bg-light-bg rounded-lg">
-      <HeadingForStatistics setTimeRangeValue={setTimeRangeValue} />
+      <HeadingForStatistics setTimeRangeValue={setTimeRangeValue} timeRangeValue={timeRangeValue} />
       <StatisticalDiagram
         data={timeRangeValue === 'yearly' ? YEARLY_STATISTICS : MONTHLY_STATISTICS}
       />

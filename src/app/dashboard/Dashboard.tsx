@@ -1,6 +1,6 @@
 import { LastTasksSection } from '@/components/last-tasks/LastTasksSection';
 import { StatisticChart } from '@/components/statistic-chart/StatisticChart';
-import { StatsCard } from '@/components/ui/card/StatsCard';
+import { StatsCard } from '@/components/ui/stats-card/StatsCard';
 import { SearchField } from '@/components/ui/search-field/SearchField';
 
 export function Dashboard() {
