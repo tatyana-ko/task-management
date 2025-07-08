@@ -9,13 +9,15 @@ export interface ISubTask {
 export interface ITask {
   id: string;
   title: string;
- 
+
   due: Date;
   users: IUser[];
-  subtasks: ISubTask[]
+  subtasks: ISubTask[];
   comments: string[];
   resources: string[];
   links: string[];
 }
 
-export type TTaskStatus =  'in progress' | 'not started' | 'completed';
+export type TTaskStatus = 'in progress' | 'not started' | 'completed';
+
+export type TTaskFormData = Pick<ITask, 'title' | 'due'>;
