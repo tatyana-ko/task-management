@@ -5,7 +5,7 @@ import styles from './filter.module.css';
 interface Props<T> {
   filterName: string;
   data: Array<{ label: string; value: T }>;
-  stateChangeFunction: Dispatch<SetStateAction<T>>;
+  stateChangeFunction: (value: T) => void;
   value: T;
 }
 
