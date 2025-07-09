@@ -10,6 +10,7 @@
   /* text color */
   --foreground: #080008;
   --light-text-color: #707070;
+  --error: #B90000;
 
   /* accent colors */
   --primary: #816CEE;
@@ -17,7 +18,7 @@
   /* tasks */
   --done-task-color: #1DC2AE;
   --in-progress-task-color: #F7BE26;
-  --bg: #F6F6F6;  
+  --bg: #F6F6F6;
 }
 
 .dark {
@@ -35,6 +36,7 @@
   /* colors */
   --color-foreground: var(--foreground);
   --color-light-text-color: var(--light-text-color);
+  --color-error: var(--error);
 
   /* accent colors */
   --color-primary: var(--primary);
