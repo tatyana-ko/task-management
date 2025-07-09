@@ -1,5 +1,5 @@
 import type { ITask } from '@/types/task.types';
-import { TaskCard } from './TaskCard';
+import { TaskCard } from './task-card/TaskCard';
 
 interface Props {
   tasks: ITask[];

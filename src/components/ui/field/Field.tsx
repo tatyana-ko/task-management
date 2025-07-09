@@ -15,7 +15,7 @@ export function Field({ label, error, registration, ...props }: IFieldProps) {
         <span className="block mb-2 text-light-text-color font-semibold">{label}</span>
         <input
           className={clsx(
-            'w-full px-3 py-2 bg-white border rounded',
+            'w-full px-3 py-2 bg-transparent border-b border-b-light-text-color',
             error ? 'border-error' : 'border-transparent',
           )}
           {...registration}

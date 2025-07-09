@@ -1,4 +1,4 @@
-import { EditTaskModal } from './EditTaskModal';
+import { EditTaskModal } from '@/components/ui/modal/EditTaskModal';
 
 interface Props {
   params: Promise<{ id: string }>;

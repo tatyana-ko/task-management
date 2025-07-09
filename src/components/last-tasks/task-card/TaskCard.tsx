@@ -1,10 +1,9 @@
 import { Images, Link as LucideLink, MessageSquareText, Pencil, Plane, Plus } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { formatDistance, subDays } from 'date-fns';
 import type { ITask } from '@/types/task.types';
 import { ProgressBar } from './ProgressBar';
-import { PAGES } from '@/config/pages.config';
+import { ModalsLauncher } from './ModalsLauncher';
 
 export function TaskCard({ task }: { task: ITask }) {
   const completedSubtasks = task.subtasks.filter((t) => t.isCompleted).length;
@@ -62,18 +61,7 @@ export function TaskCard({ task }: { task: ITask }) {
           </div>
         </div>
 
-        <div className="flex items-center gap-3">
-          <button title="add task" className="p-2 rounded-full bg-primary">
-            <Plus size={14} color="white" />
-          </button>
-          <Link
-            href={PAGES.EDIT_TASK(task.id)}
-            title="update task"
-            className="p-2 rounded-full bg-light-bg border border-primary"
-          >
-            <Pencil size={14} style={{ color: 'var(--primary)' }} />
-          </Link>
-        </div>
+        <ModalsLauncher id={task.id} />
       </div>
     </li>
   );
