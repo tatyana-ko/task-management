@@ -2,6 +2,7 @@ import { LastTasksSection } from '@/components/last-tasks/LastTasksSection';
 import { StatisticChart } from '@/components/statistic-chart/StatisticChart';
 import { StatsCard } from '@/components/ui/stats-card/StatsCard';
 import { SearchField } from '@/components/ui/search-field/SearchField';
+import { TodayTasksSection } from '@/components/today-tasks/TodayTasksSection';
 
 export function Dashboard() {
   return (
@@ -46,6 +47,7 @@ export function Dashboard() {
       </section>
 
       <LastTasksSection />
+      <TodayTasksSection />
     </div>
   );
 }

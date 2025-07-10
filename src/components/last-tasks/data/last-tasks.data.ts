@@ -1,10 +1,15 @@
 import type { ITask } from '@/types/task.types';
+import { setHours, setMinutes } from 'date-fns';
 
 export const LAST_TASKS: ITask[] = [
   {
     id: '1',
     title: 'Travel App User Flow',
-    due: new Date(new Date().getTime() + 5 * 24 * 60 * 60 * 1000),
+    due: {
+      date: new Date(),
+      startTime: "10:00",
+      endTime: "13:00",
+    },
     subtasks: [
       {
         id: '1',
@@ -43,7 +48,11 @@ export const LAST_TASKS: ITask[] = [
   {
     id: '2',
     title: 'Travel App User Flow',
-    due: new Date(new Date().getTime() + 4 * 24 * 60 * 60 * 1000),
+    due: {
+      date: new Date(),
+      startTime: "14:30",
+      endTime: "16:00",
+    },
     subtasks: [
       {
         id: '1',
@@ -82,7 +91,11 @@ export const LAST_TASKS: ITask[] = [
   {
     id: '3',
     title: 'Travel App User Flow',
-    due: new Date(new Date().getTime() + 2 * 24 * 60 * 60 * 1000),
+    due: {
+      date: new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000),
+      startTime: "10:00",
+      endTime: "10:00",
+    },
     subtasks: [
       {
         id: '1',
@@ -127,7 +140,11 @@ export const LAST_TASKS: ITask[] = [
   {
     id: '4',
     title: 'Travel App User Flow',
-    due: new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000),
+    due: {
+      date: new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000),
+      startTime: "10:00",
+      endTime: "10:00",
+    },
     subtasks: [
       {
         id: '1',

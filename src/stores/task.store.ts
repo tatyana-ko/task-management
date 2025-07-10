@@ -1,5 +1,6 @@
 import { LAST_TASKS } from '@/components/last-tasks/data/last-tasks.data';
 import type { ISubTask, ITask, TTaskFormData, TTaskStatus } from '@/types/task.types';
+import { isToday } from 'date-fns';
 import { makeAutoObservable } from 'mobx';
 
 class TaskStore {
@@ -9,6 +10,10 @@ class TaskStore {
 
   constructor() {
     makeAutoObservable(this);
+  }
+
+  get TodayTasks() {
+    return this.tasks.filter((task) => isToday(new Date(task.due.date)));
   }
 
   getTaskById(id: string): ITask | undefined {
@@ -82,8 +87,8 @@ class TaskStore {
     }
 
     return [...tasks].sort((a, b) => {
-      const dateA = new Date(a.due).getTime();
-      const dateB = new Date(b.due).getTime();
+      const dateA = new Date(a.due.date).getTime();
+      const dateB = new Date(b.due.date).getTime();
 
       return this.sorting === 'asc' ? dateA - dateB : dateB - dateA;
     });

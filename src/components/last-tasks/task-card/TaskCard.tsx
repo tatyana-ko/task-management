@@ -1,4 +1,4 @@
-import { Images, Link as LucideLink, MessageSquareText, Pencil, Plane, Plus } from 'lucide-react';
+import { Images, Link as LucideLink, MessageSquareText, Plane } from 'lucide-react';
 import Image from 'next/image';
 import { formatDistance, subDays } from 'date-fns';
 import type { ITask } from '@/types/task.types';
@@ -21,7 +21,7 @@ export function TaskCard({ task }: { task: ITask }) {
           <div className="w-[100px]">
             <h3 className="font-medium text-base leading-none">{task.title}</h3>
             <p className="text-xs opacity-50">
-              Due: {formatDistance(subDays(task.due, 0), new Date())}
+              Due: {formatDistance(subDays(task.due.date, 0), new Date())}
             </p>
           </div>
         </div>

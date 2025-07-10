@@ -28,6 +28,7 @@ export const EditTaskModal = observer(({ id }: Props) => {
   });
 
   const onSubmit = (data: TTaskFormData) => {
+    console.log(data);
     taskStore.updateTask(id, data);
 
     toast.success('You have successfully updated the task!');
@@ -50,10 +51,22 @@ export const EditTaskModal = observer(({ id }: Props) => {
         />
 
         <Field
-          registration={register('due', { valueAsDate: true })}
+          registration={register('due.date', { valueAsDate: true })}
           type="date"
-          error={errors.due?.message}
+          error={errors.due?.date?.message}
           label="Date:"
+        />
+         <Field
+          registration={register('due.startTime')}
+          type="time"
+          error={errors.due?.startTime?.message}
+          label="Start time:"
+        />
+         <Field
+          registration={register('due.endTime')}
+          type="time"
+          error={errors.due?.endTime?.message}
+          label="End time:"
         />
         <button
           type="submit"

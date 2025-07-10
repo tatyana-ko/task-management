@@ -10,7 +10,11 @@ export interface ITask {
   id: string;
   title: string;
 
-  due: Date;
+  due: {
+    date: Date;
+    startTime: string;
+    endTime: string;
+  };
   users: IUser[];
   subtasks: ISubTask[];
   comments: string[];
