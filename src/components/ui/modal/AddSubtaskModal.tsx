@@ -6,7 +6,7 @@ import { Modal } from './Modal';
 import { useForm } from 'react-hook-form';
 import { Field } from '../field/Field';
 import { toast } from 'sonner';
-import { AddSubtaskSchema } from '@/zod-schemas/ZodSchema';
+import { AddSubtaskSchema } from '@/zod-schemas/task.schema';
 
 interface Props {
   id: string;

@@ -9,7 +9,7 @@ import { taskStore } from '@/stores/task.store';
 import { toast } from 'sonner';
 import { observer } from 'mobx-react-lite';
 import { Field } from '@/components/ui/field/Field';
-import { EditTaskSchema } from '@/zod-schemas/ZodSchema';
+import { EditTaskSchema } from '@/zod-schemas/task.schema';
 
 interface Props {
   id: string;
