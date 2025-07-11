@@ -4,9 +4,9 @@ import { taskStore } from '@/stores/task.store';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Modal } from './Modal';
 import { useForm } from 'react-hook-form';
-import { AddSubtaskSchema } from '@/app/zod-schemas/ZodSchema';
 import { Field } from '../field/Field';
 import { toast } from 'sonner';
+import { AddSubtaskSchema } from '@/zod-schemas/ZodSchema';
 
 interface Props {
   id: string;
