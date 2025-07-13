@@ -1,13 +1,13 @@
 @import 'tailwindcss';
 
 :root {
-  /* background */
+  /* background colors */
   --background: #F6F4FF;
   --chat-bg-color: #3C3494;
   --accent-bg: #FFFFFF;
   --sidebar-bg: #FFFFFF;
 
-  /* text color */
+  /* text colors */
   --foreground: #080008;
   --light-text-color: #707070;
   --error: #B90000;
@@ -15,7 +15,7 @@
   /* accent colors */
   --primary: #816CEE;
 
-  /* tasks */
+  /* tasks colors */
   --done-task-color: #1DC2AE;
   --in-progress-task-color: #F7BE26;
   --bg: #F6F6F6;
@@ -60,3 +60,4 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
 }
+

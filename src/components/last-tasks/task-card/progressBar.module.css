@@ -1,0 +1,60 @@
+.container {
+  height: 24px;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+}
+
+.progress {
+  text-align: center;
+  color: white;
+  height: 24px;
+  border-radius: 20px;
+
+  background-image: linear-gradient(45deg,
+      rgba(255, 255, 255, 0.15) 25%,
+      transparent 25%, transparent 50%,
+      rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%,
+      transparent 75%, transparent);
+  /* background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); */
+  /* background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); */
+  background-size: 40px 40px;
+  background-color: #F6BF23;
+
+  /* -webkit-animation: progress-bar-stripes 2s linear infinite;
+  -o-animation: progress-bar-stripes 2s linear infinite; */
+  animation: progress-bar-stripes 2s linear infinite;
+}
+
+.inProcess {
+  background-color: #F6BF23;
+}
+
+.done {
+  background-color: #1FC3AD;
+}
+
+.red {
+  background-color: #B90000;
+}
+
+/* keyframes */
+
+@-webkit-keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+
+  to {
+    background-position: 0 0;
+  }
+}
+
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+
+  to {
+    background-position: 0 0;
+  }
+}

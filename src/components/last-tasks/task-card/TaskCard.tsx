@@ -21,6 +21,7 @@ export function TaskCard({ task }: { task: ITask }) {
           <div className="w-[100px]">
             <h3 className="font-medium text-base leading-none">{task.title}</h3>
             <p className="text-xs opacity-50">
+              {/* TODO: hydration failed error */}
               Due: {formatDistance(subDays(task.due.date, 0), new Date())}
             </p>
           </div>
