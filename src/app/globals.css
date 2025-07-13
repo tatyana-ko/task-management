@@ -4,8 +4,8 @@
   /* background */
   --background: #F6F4FF;
   --chat-bg-color: #3C3494;
-  --accent-bg: #F6F6F6;
-  --light-bg: #FFFFFF;
+  --accent-bg: #FFFFFF;
+  --sidebar-bg: #FFFFFF;
 
   /* text color */
   --foreground: #080008;
@@ -22,8 +22,13 @@
 }
 
 .dark {
+  /* background */
   --background: #171717;
+  --accent-bg: #2A272F;
+
+  /* text color */
   --foreground: #f3eeff;
+  --light-text-color: #DEDBDB;
 }
 
 @theme inline {
@@ -31,7 +36,6 @@
   --color-background: var(--background);
   --color-accent-bg: var(--accent-bg);
   --color-chat-bg-color: var(--chat-bg-color);
-  --color-light-bg: var(--light-bg);
 
   /* colors */
   --color-foreground: var(--foreground);

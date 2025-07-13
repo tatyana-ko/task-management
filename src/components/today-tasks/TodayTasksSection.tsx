@@ -10,7 +10,7 @@ export const TodayTasksSection = observer(() => {
   const users = [...new Set(todayTasks.map((task) => task.users).flat())];
 
   return (
-    <section className="min-h-[400px] p-5 bg-light-bg rounded-lg">
+    <section className="min-h-[400px] p-5 bg-accent-bg rounded-lg">
       <div className="mb-4 flex items-center justify-between">
         <h2 className="text-2xl font-medium">Today Tasks</h2>
         <ul className='flex'>

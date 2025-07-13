@@ -11,7 +11,7 @@ export function TaskCard({ task }: { task: ITask }) {
     task.subtasks.length > 0 ? Math.trunc((completedSubtasks / task.subtasks.length) * 100) : 0;
 
   return (
-    <li className="w-[280px] p-4 space-y-3 bg-light-bg rounded-xl shadow">
+    <li className="w-[280px] p-4 space-y-3 bg-accent-bg rounded-xl shadow">
       <div className="flex justify-between">
         <div className="flex gap-2">
           <div className="h-fit p-1.5 text-primary bg-primary/20 rounded-full">

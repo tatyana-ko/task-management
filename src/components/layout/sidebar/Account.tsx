@@ -5,7 +5,7 @@ export function Account() {
   return (
     <div className="mb-4">
       <h2 className="mb-4 text-light-text-color/70">Account</h2>
-      <button className="flex items-center gap-3 py-1 px-4 bg-accent-bg rounded-3xl">
+      <button className="flex items-center gap-3 py-1 px-4 bg-primary/10 rounded-3xl">
         <Image
           alt="profile avatar"
           src="/favicon.png"

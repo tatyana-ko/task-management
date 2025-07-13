@@ -30,9 +30,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={openSans.className}>
+    <html lang="en" className={openSans.className} suppressHydrationWarning>
       <body className={`antialiased`}>
-        <Providers>{children}</Providers>
+        <Providers attribute="class" defaultTheme="light" enableSystem>
+          {children}
+        </Providers>
       </body>
     </html>
   );

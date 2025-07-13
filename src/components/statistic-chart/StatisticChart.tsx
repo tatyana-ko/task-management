@@ -9,7 +9,7 @@ export function StatisticChart() {
   const [timeRangeValue, setTimeRangeValue] = useState<'yearly' | 'monthly'>('yearly');
 
   return (
-    <div className="px-2 py-2 bg-light-bg rounded-lg">
+    <div className="px-2 py-2 bg-accent-bg rounded-lg">
       <HeadingForStatistics setTimeRangeValue={setTimeRangeValue} timeRangeValue={timeRangeValue} />
       <StatisticalDiagram
         data={timeRangeValue === 'yearly' ? YEARLY_STATISTICS : MONTHLY_STATISTICS}

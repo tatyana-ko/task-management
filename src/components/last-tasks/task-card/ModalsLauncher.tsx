@@ -26,7 +26,7 @@ export function ModalsLauncher({ id }: Props) {
       <Link
         href={PAGES.EDIT_TASK(id)}
         title="update task"
-        className="p-2 rounded-full bg-light-bg border border-primary"
+        className="p-2 rounded-full bg-accent-bg border border-primary"
       >
         <Pencil size={14} style={{ color: 'var(--primary)' }} />
       </Link>
