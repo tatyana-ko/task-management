@@ -1,14 +1,28 @@
 import { Images, Link as LucideLink, MessageSquareText, Plane } from 'lucide-react';
 import Image from 'next/image';
-import { formatDistance, subDays } from 'date-fns';
+import { formatDistance, isToday, subDays } from 'date-fns';
 import type { ITask } from '@/types/task.types';
 import { ProgressBar } from './ProgressBar';
 import { ModalsLauncher } from './ModalsLauncher';
+import { useMemo } from 'react';
 
 export function TaskCard({ task }: { task: ITask }) {
-  const completedSubtasks = task.subtasks.filter((t) => t.isCompleted).length;
-  const progress =
-    task.subtasks.length > 0 ? Math.trunc((completedSubtasks / task.subtasks.length) * 100) : 0;
+  const completedSubtasks = useMemo(
+    () => task.subtasks.filter((t) => t.isCompleted).length,
+    [task.subtasks],
+  );
+
+  const progress = useMemo(
+    () =>
+      task.subtasks.length > 0 ? Math.trunc((completedSubtasks / task.subtasks.length) * 100) : 0,
+    [completedSubtasks, task.subtasks],
+  );
+
+  const due = useMemo(() => {
+    const date = new Date(task.due.date);
+
+    return isToday(date) ? 'today' : formatDistance(date, new Date(), { addSuffix: true });
+  }, [task.due.date]);
 
   return (
     <li className="w-[280px] p-4 space-y-3 bg-accent-bg rounded-xl shadow">
@@ -20,10 +34,7 @@ export function TaskCard({ task }: { task: ITask }) {
 
           <div className="w-[100px]">
             <h3 className="font-medium text-base leading-none">{task.title}</h3>
-            <p className="text-xs opacity-50">
-              {/* TODO: hydration failed error */}
-              Due: {formatDistance(subDays(task.due.date, 0), new Date())}
-            </p>
+            <p className="text-xs opacity-50">Due: {due}</p>
           </div>
         </div>
 
