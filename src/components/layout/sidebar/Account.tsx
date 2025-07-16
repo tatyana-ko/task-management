@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { ChevronDown } from 'lucide-react';
 
-export function Account() {
+export const Account = () => {
   return (
     <div className="mb-4">
       <h2 className="mb-4 text-light-text-color/70">Account</h2>
@@ -17,8 +17,8 @@ export function Account() {
           <p className="font-medium">Awe Std</p>
           <p className="text-xs text-light-text-color">awestd@gmail.com</p>
         </div>
-        <ChevronDown size={18} style={{color: 'var(--light-text-color)'}}/>
+        <ChevronDown size={18} style={{ color: 'var(--light-text-color)' }} />
       </button>
     </div>
   );
-}
+};

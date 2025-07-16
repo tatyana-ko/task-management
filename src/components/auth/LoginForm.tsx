@@ -2,40 +2,68 @@
 
 import Link from 'next/link';
 import { FormHeader } from './Header';
+import { useRouter } from 'next/navigation';
+import { useForm } from 'react-hook-form';
+import type { IAuthData } from '@/types/auth.types';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { LogInSchema } from '@/zod-schemas/auth.schemas';
+import { login } from '@/actions/actions';
+import { Field } from '../ui/field/Field';
+import { toast } from 'sonner';
 
 export function LoginForm() {
-  const handleSubmit = () => {};
+  const router = useRouter();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm<IAuthData>({
+    resolver: zodResolver(LogInSchema),
+  });
+
+  const onSubmit = async (data: IAuthData) => {
+    const result = await login(data);
+
+    if (result.status !== 'success') {
+      toast.error(result.status);
+      return;
+    }
+
+    toast.success('You have successfully logged in!');
+    router.push('/dashboard');
+    reset();
+  };
 
   return (
-    <section className='max-w-md mx-auto mt-8'>
+    <section className="max-w-md mx-auto mt-8">
       <FormHeader title="Sign in" />
 
-      <form onSubmit={handleSubmit} className='space-y-3'>
-        <label className="block text-sm font-medium">
-          <span className='text-sm block mb-2 text-light-text-color font-semibold'>Email:</span>
-          <input
-            type="email"
-            placeholder="email@email.com"
-            id="Email"
-            name="email"
-            className="mt-1 w-full px-4 p-2  h-10 rounded-md border border-gray-200 bg-white text-sm text-gray-700"
-          />
-        </label>
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
+        <Field
+          registration={register('email')}
+          placeholder="email@email.com"
+          type="email"
+          error={errors.email?.message}
+          label="Email:"
+        />
 
-        <div>
-          <label className="block text-sm font-medium">
-            <span className='text-sm block mb-2 text-light-text-color font-semibold'>Password:</span>
-            <input
-              type="password"
-              placeholder="******"
-              name="password"
-              id="password"
-              className="mt-1 w-full px-4 p-2  h-10 rounded-md border border-gray-200 bg-white text-sm text-gray-700"
-            />
-          </label>
-        </div>
+        <Field
+          registration={register('password')}
+          placeholder="******"
+          type="password"
+          error={errors.password?.message}
+          label="Password:"
+        />
 
-        <button type="button" />
+        <button
+          type="submit"
+          className="my-5 px-3 py-1.5 text-white bg-primary rounded-2xl cursor-pointer shadow"
+          disabled={isSubmitting}
+        >
+          Log In
+        </button>
       </form>
 
       <div className="flex items-center gap-3">
