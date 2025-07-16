@@ -4,5 +4,5 @@ export interface IAuthData {
 }
 
 export interface IAuthForm extends IAuthData {
-  confirmPassword?: string
+  username: string
 }
