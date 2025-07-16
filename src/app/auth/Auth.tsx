@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form';
 
 export function Auth() {
   const [isALoginForm, setIsALoginForm] = useState<boolean>(true);
+  //dk
 
   const {
     register,
