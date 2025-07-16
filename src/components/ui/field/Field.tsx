@@ -12,7 +12,7 @@ export function Field({ label, error, registration, ...props }: IFieldProps) {
   return (
     <>
       <label>
-        <span className="block mb-2 text-light-text-color font-semibold">{label}</span>
+        <span className="text-sm block mb-2 text-light-text-color font-semibold">{label}</span>
         <input
           className={clsx(
             'w-full px-3 py-2 bg-transparent border-b border-b-light-text-color',
