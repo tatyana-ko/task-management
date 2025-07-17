@@ -36,6 +36,7 @@
   --color-background: var(--background);
   --color-accent-bg: var(--accent-bg);
   --color-chat-bg-color: var(--chat-bg-color);
+  --color-sidebar-bg: var(--sidebar-bg);
 
   /* colors */
   --color-foreground: var(--foreground);
