@@ -1,6 +1,6 @@
 import { Images, Link as LucideLink, MessageSquareText, Plane } from 'lucide-react';
 import Image from 'next/image';
-import { formatDistance, isToday, subDays } from 'date-fns';
+import { formatDistance, isToday } from 'date-fns';
 import type { ITask } from '@/types/task.types';
 import { ProgressBar } from './ProgressBar';
 import { ModalsLauncher } from './ModalsLauncher';

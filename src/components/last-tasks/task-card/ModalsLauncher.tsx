@@ -1,7 +1,7 @@
 'use client';
 
 import { AddSubtaskModal } from '@/components/ui/modal/AddSubtaskModal';
-import { PAGES } from '@/config/pages.config';
+import { DASHBOARD_PAGES } from '@/config/pages.config';
 import { Pencil, Plus } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -24,7 +24,7 @@ export function ModalsLauncher({ id }: Props) {
         <Plus size={14} color="white" />
       </button>
       <Link
-        href={PAGES.EDIT_TASK(id)}
+        href={DASHBOARD_PAGES.EDIT_TASK(id)}
         title="update task"
         className="p-2 rounded-full bg-accent-bg border border-primary"
       >

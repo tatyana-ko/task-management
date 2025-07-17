@@ -10,6 +10,7 @@ import { LogInSchema } from '@/zod-schemas/auth.schemas';
 import { login } from '@/actions/actions';
 import { Field } from '../ui/field/Field';
 import { toast } from 'sonner';
+import { DASHBOARD_PAGES, OPEN_ACCESS_PAGES } from '@/config/pages.config';
 
 export function LoginForm() {
   const router = useRouter();
@@ -32,7 +33,7 @@ export function LoginForm() {
     }
 
     toast.success('You have successfully logged in!');
-    router.push('/dashboard');
+    router.push(DASHBOARD_PAGES.DASHBOARD);
     reset();
   };
 
@@ -68,13 +69,13 @@ export function LoginForm() {
 
       <div className="flex items-center gap-3">
         <h1>Don't have an account?</h1>
-        <Link href="/register" className="font-medium">
+        <Link href={OPEN_ACCESS_PAGES.REGISTER} className="font-medium">
           Sign Up
         </Link>
       </div>
       <div className="flex items-center gap-3">
         <h1>Forgot your password?</h1>
-        <Link href="/forgot-password" className="font-medium">
+        <Link href={OPEN_ACCESS_PAGES.FORGOT_PASSWORD} className="font-medium">
           Reset Password
         </Link>
       </div>

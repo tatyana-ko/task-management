@@ -4,6 +4,7 @@ import { revalidatePath } from 'next/cache';
 import { createClient } from '@/utils/supabase/server';
 import type { IAuthData, IAuthForm } from '@/types/auth.types';
 import { redirect } from 'next/navigation';
+import { OPEN_ACCESS_PAGES } from '@/config/pages.config';
 
 export async function signup({ username, email, password }: IAuthForm) {
   const supabase = await createClient();
@@ -36,7 +37,7 @@ export async function signup({ username, email, password }: IAuthForm) {
     };
   }
 
-  revalidatePath('/', 'layout');
+  revalidatePath(OPEN_ACCESS_PAGES.HOME_PAGE, 'layout');
   return {
     status: 'success',
     user: data.user,
@@ -60,7 +61,7 @@ export async function login({ email, password }: IAuthData) {
     };
   }
 
-  revalidatePath('/', 'layout');
+  revalidatePath(OPEN_ACCESS_PAGES.HOME_PAGE, 'layout');
   return {
     status: 'success',
     user: data.user,
@@ -73,9 +74,9 @@ export async function logout() {
   const { error } = await supabase.auth.signOut();
 
   if (error) {
-    redirect('/error');
+    redirect(OPEN_ACCESS_PAGES.ERROR);
   }
 
-  revalidatePath('/', 'layout');
-  redirect('/login');
+  revalidatePath(OPEN_ACCESS_PAGES.HOME_PAGE, 'layout');
+  redirect(OPEN_ACCESS_PAGES.LOGIN);
 }

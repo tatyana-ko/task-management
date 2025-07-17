@@ -10,6 +10,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { AuthSchema } from '@/zod-schemas/auth.schemas';
 import { Field } from '../ui/field/Field';
+import { OPEN_ACCESS_PAGES } from '@/config/pages.config';
 
 export function RegisterForm() {
   const router = useRouter();
@@ -32,7 +33,7 @@ export function RegisterForm() {
     }
 
     toast.success('Registration was successful. Please check your email!');
-    router.push('/login');
+    router.push(OPEN_ACCESS_PAGES.LOGIN);
     reset();
   };
 
@@ -76,13 +77,13 @@ export function RegisterForm() {
 
       <div className="flex items-center gap-3">
         <h2>Already have an account?</h2>
-        <Link href="/login" className="font-medium">
+        <Link href={OPEN_ACCESS_PAGES.LOGIN} className="font-medium">
           Sign In
         </Link>
       </div>
       <div className="flex items-center gap-3">
         <h2>Forgot your password?</h2>
-        <Link href="/forgot-password" className="font-medium">
+        <Link href={OPEN_ACCESS_PAGES.FORGOT_PASSWORD} className="font-medium">
           Reset Password
         </Link>
       </div>

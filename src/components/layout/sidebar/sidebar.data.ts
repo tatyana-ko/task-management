@@ -1,4 +1,4 @@
-import { PAGES } from '@/config/pages.config';
+import { DASHBOARD_PAGES } from '@/config/pages.config';
 import type { ISidebarMenuItem, ISidebarProjectItem } from '@/types/sidebar.types';
 
 import {
@@ -15,37 +15,37 @@ export const MAIN_MENU_DATA: ISidebarMenuItem[] = [
   {
     label: 'Dashboard',
     icon: LayoutGrid,
-    link: PAGES.DASHBOARD,
+    link: DASHBOARD_PAGES.DASHBOARD,
   },
   {
     label: 'Messages',
     icon: MessageCircleMore,
-    link: PAGES.MESSAGES,
+    link: DASHBOARD_PAGES.MESSAGES,
   },
   {
     label: 'Insight',
     icon: AlignEndHorizontal,
-    link: PAGES.INSIGHT,
+    link: DASHBOARD_PAGES.INSIGHT,
   },
   {
     label: 'Team',
     icon: Users,
-    link: PAGES.TEAM,
+    link: DASHBOARD_PAGES.TEAM,
   },
   {
     label: 'Schedule',
     icon: CalendarDays,
-    link: PAGES.SCHEDULE,
+    link: DASHBOARD_PAGES.SCHEDULE,
   },
   {
     label: 'Report',
     icon: Notebook,
-    link: PAGES.REPORT,
+    link: DASHBOARD_PAGES.REPORT,
   },
   {
     label: 'Settings',
     icon: Settings,
-    link: PAGES.SETTINGS,
+    link: DASHBOARD_PAGES.SETTINGS,
   },
 ];
 
