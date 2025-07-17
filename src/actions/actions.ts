@@ -80,3 +80,13 @@ export async function logout() {
   revalidatePath(OPEN_ACCESS_PAGES.HOME_PAGE, 'layout');
   redirect(OPEN_ACCESS_PAGES.LOGIN);
 }
+
+export async function getUserSession() {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase.auth.getSession();
+
+  if (error) return null;
+
+  return { status: 'success', user: data.session?.user };
+}
