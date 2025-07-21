@@ -12,8 +12,8 @@ export interface ITask {
 
   due: {
     date: Date;
-    startTime: string;
-    endTime: string;
+    startTime: Date;
+    endTime: Date;
   };
   users: IUser[];
   subtasks: ISubTask[];

@@ -1,14 +1,16 @@
 import type { ITask } from '@/types/task.types';
 import { setHours, setMinutes } from 'date-fns';
 
+const now = new Date();
+
 export const LAST_TASKS: ITask[] = [
   {
     id: '1',
     title: 'Travel App User Flow',
     due: {
-      date: new Date(),
-      startTime: "10:00",
-      endTime: "13:00",
+      date: now,
+      startTime: setMinutes(setHours(new Date(), 9), 0),
+      endTime: setMinutes(setHours(new Date(), 11), 0),
     },
     subtasks: [
       {
@@ -18,7 +20,7 @@ export const LAST_TASKS: ITask[] = [
       },
       {
         id: '2',
-        title: 'first',
+        title: 'second',
         isCompleted: false,
       },
       {
@@ -47,11 +49,11 @@ export const LAST_TASKS: ITask[] = [
   },
   {
     id: '2',
-    title: 'Travel App User Flow',
+    title: 'Design Interactive Onboarding Carousel',
     due: {
-      date: new Date(),
-      startTime: "14:30",
-      endTime: "16:00",
+      date: now,
+      startTime: setMinutes(setHours(new Date(), 13), 0),
+      endTime: setMinutes(setHours(new Date(), 16), 0),
     },
     subtasks: [
       {
@@ -61,7 +63,7 @@ export const LAST_TASKS: ITask[] = [
       },
       {
         id: '2',
-        title: 'first',
+        title: 'second',
         isCompleted: true,
       },
       {
@@ -93,8 +95,8 @@ export const LAST_TASKS: ITask[] = [
     title: 'Travel App User Flow',
     due: {
       date: new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000),
-      startTime: "10:00",
-      endTime: "10:00",
+      startTime: setMinutes(setHours(new Date(), 11), 50),
+      endTime: setMinutes(setHours(new Date(), 12), 40),
     },
     subtasks: [
       {
@@ -104,7 +106,7 @@ export const LAST_TASKS: ITask[] = [
       },
       {
         id: '2',
-        title: 'first',
+        title: 'second',
         isCompleted: false,
       },
       {
@@ -142,8 +144,8 @@ export const LAST_TASKS: ITask[] = [
     title: 'Travel App User Flow',
     due: {
       date: new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000),
-      startTime: "10:00",
-      endTime: "10:00",
+      startTime: setMinutes(setHours(new Date(), 10), 10),
+      endTime: setMinutes(setHours(new Date(), 12), 50),
     },
     subtasks: [
       {
@@ -153,7 +155,7 @@ export const LAST_TASKS: ITask[] = [
       },
       {
         id: '2',
-        title: 'first',
+        title: 'second',
         isCompleted: false,
       },
       {

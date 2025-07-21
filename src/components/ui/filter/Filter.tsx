@@ -1,5 +1,5 @@
 import { ChevronDown } from 'lucide-react';
-import type { ChangeEvent, Dispatch, SetStateAction } from 'react';
+import type { ChangeEvent } from 'react';
 import styles from './filter.module.css';
 
 interface Props<T> {
@@ -34,7 +34,9 @@ export function Filter<T extends string>({
           ))
         )}
       </select>
-      <div><ChevronDown className={styles.icon} /></div>
+      <div>
+        <ChevronDown className={styles.icon} />
+      </div>
     </div>
   );
 }
