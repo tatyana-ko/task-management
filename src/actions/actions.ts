@@ -5,6 +5,7 @@ import { createClient } from '@/utils/supabase/server';
 import type { IAuthData, IAuthForm } from '@/types/auth.types';
 import { redirect } from 'next/navigation';
 import { OPEN_ACCESS_PAGES } from '@/config/pages.config';
+import { headers } from 'next/headers';
 
 export async function signup({ username, email, password }: IAuthForm) {
   const supabase = await createClient();
@@ -89,4 +90,40 @@ export async function getUserSession() {
   if (error) return null;
 
   return { status: 'success', user: data?.user };
+}
+
+export async function forgotPassword(email: string) {
+  const supabase = await createClient();
+  const origin = (await headers()).get('origin');
+
+  const { error } = await supabase.auth.resetPasswordForEmail(email, {
+    redirectTo: `${origin}/reset-password`,
+  });
+
+  if (error) {
+    return {
+      status: error?.message,
+      user: null,
+    };
+  }
+
+  return { status: 'success' };
+}
+
+export async function resetPassword(newPassword: string, code: string) {
+  const supabase = await createClient();
+
+  const { error: CodeError } = await supabase.auth.exchangeCodeForSession(code);
+
+  if (CodeError) {
+    return { status: CodeError.message };
+  }
+
+  const { error } = await supabase.auth.updateUser({ password: newPassword });
+
+  if (error) {
+    return { status: error.message };
+  }
+
+  return {status: 'success'}
 }
